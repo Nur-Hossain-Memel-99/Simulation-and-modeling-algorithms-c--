@@ -1,51 +1,44 @@
- 
-#include <bits/stdc++.h>
-using namespace std;
- 
+#include<iostream>
 
-void linearCongruentialMethod( int Xo, int m, int a, int c,vector<int>& randomNums,int noOfRandomNums)
-{
- 
-    // Initialize the seed state
-    randomNums[0] = Xo;
- 
-    // Traverse to generate required
-    // numbers of random numbers
-    for (int i = 1; i < noOfRandomNums; i++) {
-        // Follow the linear congruential method
-        randomNums[i]
-            = ((randomNums[i - 1] * a) + c) % m;
-    }
-}
- 
-// Driver Code
+using namespace std;
+
 int main()
 {
-    int Xo ; // Seed value
-    int m = 2147483648; // Modulus parameter
-    int a = 1103515245; // Multiplier term
-    int c = 12345; // Increment term
- 
-    // Number of Random numbers
-    // to be generated
-    int noOfRandomNums;
-    cout <<"How many random numbers Do You want? Enter Here = ";
-    cin >>noOfRandomNums;
-    
-    cout <<"Enter initial value Here = ";
-	cin >>Xo; 
- 
-    // To store random numbers
-    vector<int> randomNums(
-        noOfRandomNums);
- 
-    // Function Call
-    linearCongruentialMethod( Xo, m, a, c,randomNums, noOfRandomNums);
- 
-    // Print the generated random numbers
-    for (int i = 0; i < noOfRandomNums; i++) {
-        cout << "\t\t"<< i+1 <<". " <<randomNums[i]<<"\n" << " ";
-    }
- 
-    return 0;
+	int a,c,m,n=1000,d=0,flag = 0;
+	int z[1000];
+	
+	cout <<"value of a =";
+	cin >> a;
+	
+	cout <<"value of c =";
+	cin >> c;
+	
+	cout <<"value of m =";
+	cin >> m;
+	
+	cout <<"value of Z0 =";
+	cin >> z[0];
+	cout << endl;
+	
+	cout<<z[0]<<"\n";
+	
+	for(int i=1;i<n;i++)
+	{
+		z[i]= (a*z[i-1]+c) % m ;
+		
+		d++;
+		for(int j = 0;j<i;j++)
+		{
+			if(z[j] == z[i])
+			flag = 1;
+			
+		}
+		if(flag == 1)
+			break;
+		cout<<z[i];
+		cout<<"\n";
+		
+	}
+	cout<<"Cycle Length is : " <<d;
+	return 0;
 }
