@@ -3,20 +3,20 @@
 using namespace std;
 
 int main()
-{
+{  
 	int a,c,m,n=1000,d=0,flag = 0;
 	int z[1000];
-	
-	cout <<"value of a =";
+	cout<<"------------LCM-------------\n" <<d;
+	cout <<"value of a =\n";
 	cin >> a;
 	
-	cout <<"value of c =";
+	cout <<"value of c =\n";
 	cin >> c;
 	
-	cout <<"value of m =";
+	cout <<"value of m =\n";
 	cin >> m;
 	
-	cout <<"value of Z0 =";
+	cout <<"value of Z0 =\n";
 	cin >> z[0];
 	cout << endl;
 	
@@ -39,6 +39,6 @@ int main()
 		cout<<"\n";
 		
 	}
-	cout<<"Cycle Length is : " <<d;
+	cout<<"Cycle Length: " <<d;
 	return 0;
 }
