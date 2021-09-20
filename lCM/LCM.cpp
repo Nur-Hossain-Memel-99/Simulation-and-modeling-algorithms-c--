@@ -5,8 +5,9 @@ using namespace std;
 int main()
 {  
 	int a,c,m,n=1000,d=0,flag = 0;
-	int z[1000];
-	cout<<"------------LCM-------------\n" <<d;
+	int z[10000];
+	cout<<"------------Linear congruential generator-------------\n";
+	
 	cout <<"value of a =\n";
 	cin >> a;
 	
@@ -22,6 +23,8 @@ int main()
 	
 	cout<<z[0]<<"\n";
 	
+	cout <<"value of n =\n";
+	cin >> n;
 	for(int i=1;i<n;i++)
 	{
 		z[i]= (a*z[i-1]+c) % m ;
@@ -35,10 +38,10 @@ int main()
 		}
 		if(flag == 1)
 			break;
-		cout<<z[i];
+		cout<<"\t"<< d<< ". "<<z[i];
 		cout<<"\n";
 		
 	}
-	cout<<"Cycle Length: " <<d;
+	cout<<"Cycle Length: " <<d+1;
 	return 0;
 }
